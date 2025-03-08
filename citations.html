@@ -16,6 +16,7 @@
             <a href="#video-sources">Videos</a>
             <a href="citations.html">Citations</a>
         </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
      </nav>
     <main>
         <section id="image-sources">
@@ -38,4 +39,16 @@
     </footer>
 
 </body>
+<script>
+    // Toggle mobile menu
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks. classList. toggle('active');
+}
+document.querySelectorAll('nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+    });
+});
+</script>
 </html>

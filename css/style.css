@@ -1,0 +1,720 @@
+:root {
+    --background: #b6d3f1ff;
+    --head: #69606cff;
+    --sandy-brown: #ffa05cff;
+    --button: #ee6a6aff;
+    --amethyst: #9e6bacff;
+    --alt: #ddeafa;
+}
+* {
+    font-family:'Times New Roman', Times, serif;
+}
+html {
+    scrollbar-color: var(--head) var(--alt);
+    overflow-x: hidden;
+}
+body {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    width: 93.3%;
+    height: 160px;
+    margin-left: 3.3%;
+    margin-right: 3.3%;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: var(--head);
+    color: var(--background);
+    align-items: center;
+    position: fixed;
+    top: -100px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+.bhead {
+    width: 100%;
+    top: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+header h1 {
+    position: absolute;
+    font-size: 60px;
+    margin-left: 20%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.logo {
+    width: 3%;
+    margin-left: 10px;
+}
+header button {
+    all: unset;
+    position: absolute;
+    right: 1%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+header button::before {
+    content: 'Navigation';
+    margin-right: 5px;
+    padding-bottom: 10px;
+}
+.hopen {
+    top: 0;
+    transition: top 0.3s ease;
+}
+
+/* NAVIGATION MENU */
+nav,.link {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+nav a,.link {
+    transform: translateY(-30px);
+    padding: 9px;
+    border-left: var(--button) 2px solid;
+    font-size: 1.5rem;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--button) 50%, var(--button));
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    text-decoration: none;
+    transition: all .25s ease-in;
+    color: var(--background)
+}
+nav a:hover,.link:hover {
+    cursor: pointer;
+    background-position: 0 0;
+    color: var(--head);
+}
+nav a:visited,.link:visited {
+    color: var(--background);
+    text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1%;
+    width: 100%;
+}
+
+/* LANDING IMAGE */
+.landing img {
+    width: 100%;
+}
+.imgcontainer {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+.imgtext {
+    font-size: 40px;
+    color: var(--background);
+    background-color: var(--head);
+    padding: 10px;
+    border-radius: 3px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+/* SECTION HEADERS */
+.sechead {
+    display: flex;
+    width: 93.3%;
+    height: 60px;
+    margin-left: 3.3%;
+    margin-right: 3.3%;
+    margin-top: 1%;
+    border-radius: 3px;
+    background-color: var(--head);
+    color: var(--background);
+    align-items: center;
+}
+.secheadalt {
+    background-color: var(--alt);
+    color: var(--alt);
+}
+.sechead h2 {
+    font-size: 40px;
+    margin-left: 20%;
+}
+
+/* SIGN UP BUTTON */
+.signup, .button {
+    position: absolute;
+    border: unset;
+    background-color: var(--button);
+    color: var(--head);
+    border-radius: 3px;
+    padding: 3px;
+    padding-bottom: 3.5px;
+    right: 50%;
+    font-size: 25px;
+    cursor: pointer;
+
+    transition: color 0.1s, transform 0.1s ease;
+}
+#signup {
+    transform: translate(50%);
+}
+#signup:hover {
+    transform: translate(50%) translateY(-1px) translateX(-1px);
+    transition: color 0.1s, transform 0.1s ease, box-shadow 0.1s ease;
+}
+.signup:hover {
+    color: var(--alt);
+    box-shadow: var(--alt) 1px 1px;
+    transform: translateY(-1px) translateX(-1px);
+    transition: color 0.1s, transform 0.1s ease, box-shadow 0.1s ease;
+}
+.signup:active {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: var(--alt) 0px 0px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* POPUP FORM */
+.fpopup {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(221, 234, 250, .2);
+    z-index: 1001;
+}
+.form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--head);
+    color: var(--background);
+    border-radius: 3px;
+    padding: 20px;
+}
+.form h2 {
+    font-size: 40px;
+    margin: 4px
+}
+.form ul {
+    list-style: none;
+    padding: 0;
+}
+.form label {
+    display: inline-block;
+    width: 70px;
+}
+.form li input {
+    margin: 0.5em 0;
+    font-size: large;
+    background-color: var(--background);
+    border: 0;
+    color: var(--head);
+    outline: none;
+}
+.form li input:focus {
+    outline: 2px solid var(--button);
+}
+.form button, #button {
+    position: relative;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 3px;
+}
+
+/* SECTION GRIDS */
+.acco {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.acco article {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background-color: var(--background);
+    color: var(--head);
+    margin: 50px;
+    padding: 20px;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.acco article:hover {
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: var(--head) 5px 5px;
+}
+
+/* GALLERY */
+.gallery article {
+    width: auto;
+    height: 400px;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: var(--alt);
+    flex-direction: column;
+}
+.gallery article p {
+    margin: 4px;
+    margin-top: 8px;
+    font-size: 20px;
+}
+.galcon {
+    overflow: hidden;
+
+    margin-top: 16px;
+    border: 0;
+    height: 350px;
+}
+.acco img {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+}
+.scroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+/* REVIEWS */
+.reviews article{
+    position: relative;
+    width: 350px;
+    height: 300px;
+}
+article h3 {
+    margin: 0px;
+}
+.reviews p {
+    margin: 0;
+    top: 0;
+    right: 0;
+}
+.reviews figcaption {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    width: 93.3%;
+    height: 30px;
+    margin-left: 3.3%;
+    margin-right: 3.3%;
+    padding-left: 10px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    background-color: var(--head);
+    color: var(--background);
+    align-items: center;
+    justify-content: left;
+}
+.icocon {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    position: absolute;
+    right: 3.3%;
+    font-size: 20px;
+    grid-template-columns: repeat(6,1fr);
+}
+.icocon i {
+    display: block;
+    width: 100%;
+}
+.icocon a {
+    all: unset;
+    cursor: pointer;
+}
+.icocon a:visited {
+    all: unset;
+}
+
+/* ABOUT */
+.about article {
+    display: inline;
+    width: 350px;
+    height: 430px;
+}
+.about article h2 {
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 5px
+}
+.about article p {
+    margin-top: 0;
+}
+.link {
+    margin-top: 15px;
+    width: auto;
+    color: var(--button);
+}
+.link:visited {
+    color: var(--button)
+}
+.link:hover {
+    color: var(--background);
+}
+
+/* RESPONSIVE DESIGN */
+/* small */
+@media screen and (max-width: 467px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    header {
+        width: 100%;
+        height: 160px;
+        margin: 0px;
+    }
+    header h1{
+        margin: 0;
+        font-size: 20px;
+        position: relative;
+    }
+    header .icocon{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        right: 24px;
+        right: 0;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .sechead h2{
+        font-size: 25px;
+    }
+    .imgtext {
+        font-size: 20px;
+    }
+    .sechead h2{
+        margin-left: 10px;
+    }
+    .acco {
+        flex-direction: column;
+    }
+    .acco article{
+        margin: 13px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    article{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .scroll {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery article {
+        height: auto;
+        width: 90%;
+    }
+    .acco img{
+        width: 100%;
+        height: auto;
+    }
+    .logo{
+        width: 8%;
+        margin: 0;
+    }
+    #signup { /*Controls the position of the sign up button*/
+        transform: translate(50%) translateY(175%);
+    }
+    #signup:hover { /*Controls the position of the sign up button*/
+        transform: translate(50%) translateY(175%);
+    }
+    footer{
+        width: 100%;
+        margin: 0;
+        padding-top: 5px;
+        height: 72px;
+        flex-direction: column;
+    }
+    footer .icocon{
+        margin-top: 5px;
+        position: relative;
+        gap:15px;
+    }
+    .landing img{
+        margin-top: 100px;
+    }
+    .imgtext{
+        top: 72%;
+    }
+    .reviews figcaption{
+        right: 40px;
+        bottom: 10px;
+    }
+    .landing .sechead{
+        margin-bottom: 60px;
+    }
+
+    .reviews p{
+        font-size: 22px;
+    }
+    .reviews article{
+        height: 240px;
+    }
+    figure{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .mobile-menu-btn::before{
+        display: none;
+    }
+    nav, .link{
+        flex-wrap: wrap;
+    }
+
+
+}
+
+
+@media screen and (min-width:467px) and (max-width: 923px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    header {
+        width: 100%;
+        height: 180px;
+        margin: 0px;
+    }
+    header h1{
+        margin: 0;
+        font-size: 20px;
+        position: relative;
+    }
+    header .icocon{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        right: 24px;
+        right: 0;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .sechead h2{
+        font-size: 25px;
+    }
+    .imgtext {
+        font-size: 20px;
+    }
+    .sechead h2{
+        margin-left: 10px;
+    }
+    .acco {
+        flex-direction: column;
+    }
+    .acco article{
+        margin: 13px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    article{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .scroll {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery article {
+        height: auto;
+        width: 90%;
+    }
+    .acco img{
+        width: 100%;
+        height: auto;
+    }
+    .logo{
+        width: 8%;
+        margin: 0;
+    }
+    #signup { /*Controls the position of the sign up button*/
+        transform: translate(50%) translateY(175%);
+    }
+    #signup:hover { /*Controls the position of the sign up button*/
+        transform: translate(50%) translateY(175%);
+    }
+    footer{
+        width: 100%;
+        margin: 0;
+        padding-top: 5px;
+        height: 72px;
+        flex-direction: column;
+    }
+    footer .icocon{
+        margin-top: 5px;
+        position: relative;
+        gap:15px;
+    }
+    .landing img{
+        margin-top: 100px;
+    }
+    .imgtext{
+        top: 72%;
+    }
+    .reviews figcaption{
+        right: 40px;
+        bottom: 10px;
+    }
+    .landing .sechead{
+        margin-bottom: 60px;
+    }
+
+    .reviews p{
+        font-size: 22px;
+    }
+    .reviews article{
+        height: 240px;
+    }
+    figure{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* medium */
+@media screen and (min-width: 923px) and (max-width: 1200px) {
+    header {
+        width: 100%;
+        height: 178px;
+        margin: 0px;
+    }
+    header h1{
+        font-size: 43px;
+    }
+    header .icocon{
+        right: 24px;
+    }
+    .sechead h2{
+        font-size: 25px;
+    }
+    .imgtext {
+        font-size: 20px;
+    }
+    .sechead h2{
+        margin-left: 10px;
+    }
+    .acco {
+        flex-direction: column;
+    }
+    .acco article{
+        margin: 13px;
+    }
+    .scroll {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery article {
+        height: auto;
+        width: auto;
+    }
+    .logo{
+        width: 5%;
+    }
+    #signup { /*Controls the position of the sign up button*/
+        transform: translate(120%);
+    }
+    #signup:hover { /*Controls the position of the sign up button*/
+        transform: translate(120%);
+    }
+    footer{
+        width: 100%;
+        margin: 0;
+        padding-top: 5px;
+        height: 50px;
+        flex-direction: column;
+    }
+    footer .icocon{
+        margin-top: 5px;
+        position: relative;
+        gap:15px;
+    }
+
+    .reviews p{
+        font-size: 25px;
+    }
+    .reviews article{
+        height: 240px;
+    }
+    figure{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+/* large */
+@media screen and (min-width:1200px) and (max-width:1600px) {
+     header h1{
+        font-size: 45px;
+    }
+    .acco article{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .reviews p{
+        font-size: 25px;
+    }
+    .reviews article{
+        height: 240px;
+    }
+    figure{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .logo{
+        width: 4%;
+    }
+    .sechead h2{
+        margin: 3%;
+    }
+    #signup{
+        transform: translate(200%);
+    }
+
+    #signup:hover{
+        transform: translate(200%);
+    }
+}

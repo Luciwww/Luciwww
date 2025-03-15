@@ -1,0 +1,221 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* VARIABLES */
+:root {
+    --background: #E4E5F1;
+    --htext: #181C39;
+    --link: #0091AD;
+}
+
+html {
+    scrollbar-color: var(--htext) var(--background);
+    scrollbar-width: thin;
+}
+/* BODY */
+body {
+    background-color: var(--background);
+    margin: unset;
+    padding: unset;
+}
+
+/* HEADER */
+header {
+    margin: 0%;
+    width: 100%;
+}
+h1 {
+    font-size: 2.5em;
+    color: var(--htext);
+    margin-top: 0px;
+    margin-bottom: 0rem;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-bottom: 5px var(--htext) solid;
+}
+h2 {
+    color: var(--htext);
+    border-bottom: 2px var(--htext) solid;
+    margin-bottom: 0.5rem;
+}
+h3 {
+    border-bottom: 1.5px var(--htext) solid;
+}
+/* NAVIGATION */
+nav {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    right: 2%;
+    font-size: 1.2rem;
+}
+nav a {
+    margin-right: 20px;
+}
+nav a::before {
+    all:unset
+}
+nav a:hover {
+    transform: translateY(-1.5px);
+}
+
+/* CONTACTS */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.contact-info {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+/* LINKS */
+a {
+    text-decoration-color: rgba(0,0,0,0);
+    color: var(--link);
+    transition: all 0.3s ease;
+}
+a::before {
+    content: "\F470";
+    margin-right: 3px;
+    font-family: "bootstrap-icons";
+}
+a:visited {
+    color: var(--link);
+}
+a:hover {
+    transform: translateY(-1.5px);
+}
+a span:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(0,145,173,1);
+    transition: all 0.3s ease;
+}
+
+#email::before {
+    content: "\F32C";
+    margin-right: 3px;
+    font-family: "bootstrap-icons";
+    text-decoration: none;
+}
+#phone::before {
+    content: "\F5B4";
+    margin-right: 3px;
+    font-family: "bootstrap-icons";
+}
+#github::before {
+    content: "\F3ED";
+    margin-right: 3px;
+    font-family: "bootstrap-icons";
+}
+
+/* SECTIONS */
+.containers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20% 20%;
+}
+section {
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+    padding: 5%;
+    border: var(--htext) 2px solid;
+    border-radius: 10px;
+    margin: 5%;
+    background-color: #cdcfe5;
+    box-shadow: var(--htext) 5px 5px;
+}
+section:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+    box-shadow: var(--htext) 5px 12px;
+}
+
+/* FOOTER */
+footer {
+    border-top: 2px var(--htext) solid;
+    padding-left: 5px;
+}
+
+/* RESPONSIVE */
+/* SMALL */
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 10px;
+    }
+    .containers {
+        margin: 10px;
+        width: 100%;
+    }
+    .contact-container {
+        width: 100%;
+    }
+    h1{
+        height: auto;
+        padding-bottom: 30px;
+    }
+    nav{
+        top: 57px;
+        left: 2%;
+    }
+}
+/* MEDIUM */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .containers {
+        margin: 10px;
+        width: 100%;
+    }
+    .contact-container {
+        width: 100%;
+        flex-direction: column;
+    }
+    nav{
+        flex-wrap: wrap;
+    }
+    h1{
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    body {
+        padding: 10px;
+    }
+    .containers {
+        margin: 10px;
+        width: 100%;
+    }
+    .contact-container {
+        width: 100%;
+        flex-direction: column;
+    }
+    nav{
+        flex-wrap: wrap;
+    }
+    h1{
+        padding-bottom: 70px;
+    }
+}
+/* BIG */
+@media screen and (min-width: 1000px) {
+    body {
+        padding: 10px;
+    }
+    .containers {
+        margin: 10px;
+        width: 100%;
+        align-items: center;
+    }
+    section {
+        margin-top: 5px;
+        padding: 2%;
+        width: 50%;
+    }
+    .contact-container {
+        width: 100%;
+    }
+}
